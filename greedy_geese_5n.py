@@ -72,8 +72,9 @@ class GreedyAgent4n:
             
             resky_move[i] = {
             position: ((resky_move[i-1][position][0]-1,resky_move[i-1][position][1]) 
-                        if resky_move[i-1][position][0] != 1 
-                        else (1,resky_move[i-1][position][1]*0.5))
+                        if resky_move[i-1][position][0] != 1 and i >= distFoodMin 
+                        elif i >= distFoodMin
+                        (1,resky_move[i-1][position][1]*0.5))
                         #Si la case est potentielement la dernière d'une oie alors on divise par deux le risque par rapport au cylce précédant 
                         #Sinon on diminue la distance avec la fin de l'oie de 1
             for position in resky_move[i-1].keys()
